@@ -1,5 +1,7 @@
 # NVIM Config
 
+This repository contains personalized configurations for nvim using Lua and NvChad ⚙️🪴
+
 ## Configure NVIM Config
 
 Go to the repo directory and use symlink for nvim config
