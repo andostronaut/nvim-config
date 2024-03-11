@@ -7,34 +7,10 @@ This repository contains personalized configurations for nvim using Lua and NvCh
 Go to the repo directory and use symlink for nvim config
 
 ```sh
-ln -s /nvim-config/ ~/.config/nvim
+ln -s . ~/.config/nvim
 ```
-
-## Setup TMUX
-
-### Relevant Files
-
-- [.tmux.conf](.tmux.conf)
-
-Install TMUX with Homebrew:
-
-```sh
-brew install tmux
-```
-
-Install Tpm (TMUX Package Manager):
-
-```sh
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-Install all plugins in TMUX with command: `Ctrl-a + Shift-i`
 
 ## Setup Neovim
-
-### Relevant Files
-
-- [.config/nvim](.config/nvim)
 
 ### Setup Requires
 
