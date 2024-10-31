@@ -24,7 +24,7 @@ local options = {
 
   lspconfig = {
     ensure_installed = {
-      "tsserver",
+      "ts_ls",
       "html",
       "cssls",
       "tailwindcss",
