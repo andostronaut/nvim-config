@@ -121,24 +121,24 @@ M.has_deno_json = function()
 end
 
 M.get_ts_js_linter = function()
-  return M.has_deno_json() and "deno" or "eslint_d"
+  return M.has_deno_json() and "deno" or "eslint"
 end
 
 M.is_helm_file = function(path)
-	local check = vim.fs.find("Chart.yaml", { path = vim.fs.dirname(path), upward = true })
-	return not vim.tbl_isempty(check)
+  local check = vim.fs.find("Chart.yaml", { path = vim.fs.dirname(path), upward = true })
+  return not vim.tbl_isempty(check)
 end
 
 M.yaml_filetype = function(path, bufname)
-	return M.is_helm_file(path) and "helm" or "yaml"
+  return M.is_helm_file(path) and "helm" or "yaml"
 end
 
 M.tmpl_filetype = function(path, bufname)
-	return M.is_helm_file(path) and "templ" or "template"
+  return M.is_helm_file(path) and "templ" or "template"
 end
 
 M.tpl_filetype = function(path, bufname)
-	return M.is_helm_file(path) and "templ" or "smarty"
+  return M.is_helm_file(path) and "templ" or "smarty"
 end
 
 return M
