@@ -465,18 +465,6 @@ local default_plugins = {
       vim.notify = require("noice").notify
     end,
   },
-
-  -- codeium
-  {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup({})
-    end
-  },
 }
 
 local config = require("core.utils").load_config()
