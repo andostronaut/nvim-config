@@ -468,7 +468,7 @@ local default_plugins = {
 
   -- copilot
   {
-    "copilot.vim",
+    "github/copilot.vim",
     cmd = { "Copilot" }
   }
 }
