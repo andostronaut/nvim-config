@@ -465,6 +465,12 @@ local default_plugins = {
       vim.notify = require("noice").notify
     end,
   },
+
+  -- copilot
+  {
+    "copilot.vim",
+    cmd = { "Copilot" }
+  }
 }
 
 local config = require("core.utils").load_config()
