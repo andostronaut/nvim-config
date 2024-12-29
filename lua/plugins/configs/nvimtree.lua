@@ -44,7 +44,7 @@ local options = {
       show = {
         file = true,
         folder = true,
-        folder_arrow = true,
+        folder_arrow = false,
         git = true,
       },
       glyphs = {
