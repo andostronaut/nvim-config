@@ -50,7 +50,6 @@ local options = {
       "templ",
       "intelephense",
       "solargraph",
-      "dartls",
       "denols",
     },
     -- auto-install configured servers (with lspconfig)
