@@ -116,12 +116,12 @@ M.lazy_load = function(plugin)
 end
 
 M.has_deno_json = function()
-  local stat, err = vim.loop.fs_stat("deno.json")
+  local stat, err = vim.loop.fs_stat "deno.json"
   return stat and stat.type == "file"
 end
 
 M.get_ts_js_linter = function()
-  return M.has_deno_json() and "deno" or "eslint"
+  return M.has_deno_json() and "denols" or "eslint"
 end
 
 M.is_helm_file = function(path)
