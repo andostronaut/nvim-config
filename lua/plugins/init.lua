@@ -221,8 +221,7 @@ local default_plugins = {
 
       -- custom nvchad cmd to install all mason binaries listed
       vim.api.nvim_create_user_command("MasonInstallAll", function()
-        vim.cmd("MasonInstall " .. table.concat(opts.lspconfig, " "))
-        vim.cmd("MasonInstall " .. table.concat(opts.tool, " "))
+        vim.cmd("MasonInstall " .. table.concat(opts.mason.ensure_installed, " "))
       end, {})
 
       vim.g.mason_binaries_list = opts.lspconfig.ensure_installed
