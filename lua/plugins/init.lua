@@ -209,7 +209,7 @@ local default_plugins = {
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
-    cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
+    cmd = { "Mason", "MasonInstall", "MasonToolsInstall", "MasonToolsUpdate", "MasonInstallAll", "MasonUpdate" },
     opts = function()
       return require "plugins.configs.mason"
     end,
