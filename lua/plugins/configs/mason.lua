@@ -70,13 +70,12 @@ local options = {
       "goimports",
       "jsonlint",
       "tflint",
-      "yamllint",
       "php-cs-fixer",
       "phpcs",
       "phpstan",
     },
     integrations = {
-      ['mason-lspconfig'] = true,
+      ["mason-lspconfig"] = true,
     },
   },
 }

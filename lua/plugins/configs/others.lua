@@ -115,7 +115,7 @@ M.setup_linting = function()
     vue = { "eslint" },
     python = { "pylama" },
     json = { "jsonlint" },
-    yaml = { "yamllint" },
+    yaml = { "eslint" },
     terraform = { "tflint" },
     php = { "phpcs", "phpstan" },
   }
