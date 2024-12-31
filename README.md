@@ -14,7 +14,7 @@ ln -s . ~/.config/nvim
 
 ### Setup Requires
 
-- True Color Terminal Like: [iTerm2](https://iterm2.com/)
+- True Color Terminal Like: [iTerm2](https://iterm2.com/), [Ghostty](https://ghostty.org), [KiTTY](https://9bis.net/kitty)
 - [Neovim](https://neovim.io/) (Version 0.9 or Later)
 - [Nerd Font](https://www.nerdfonts.com/) - I use Meslo Nerd Font
 - [Ripgrep](https://github.com/BurntSushi/ripgrep) - For Telescope Fuzzy Finder
