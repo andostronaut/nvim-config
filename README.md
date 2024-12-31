@@ -23,22 +23,36 @@ ln -s . ~/.config/nvim
 Install Deps with Homebrew:
 
 ```sh
-brew install --cask iterm2
-
 brew install node vim neovim tree-sitter git fd ripgrep lazygit lua luajit
 ```
 
-For XCode Command Line Tools do:
+### Install Mason Plugins
 
-```bash
-xcode-select --install
-```
+[Mason](https://github.com/williamboman/mason.nvim) is a package manager for Neovim that helps manage LSP servers, DAP servers, linters, and formatters.
 
-If you have already installed vim, create a symbolic link to map directly neovim with vim
+To install and set up Mason:
 
-```sh
-ln -s $(which nvim) /opt/homebrew/bin/vim
-```
+1. Open Neovim and run:
+
+   ```
+   :Mason
+   ```
+
+   This will open Mason's interface where you can browse and install packages.
+
+2. Install preconfigured tools by running:
+
+   ```
+   :MasonToolsInstall
+   ```
+
+The above will install commonly used development tools like:
+
+- Language servers (LSP)
+- Linters
+- Formatters
+
+For troubleshooting, check Mason's logs with `:MasonLog`.
 
 ### Setup Go on Neovim
 
