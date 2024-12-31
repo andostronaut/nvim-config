@@ -133,20 +133,18 @@ require("lspconfig").ts_ls.setup {
   capabilities = M.capabilities,
 }
 
-require("deno-nvim").setup {
-  server = {
-    capabilities = M.capabilities,
-    root_dir = require("lspconfig").util.root_pattern "deno.json",
-    on_attach = function()
-      local active_clients = vim.lsp.get_active_clients()
+require("lspconfig").denols.setup {
+  capabilities = M.capabilities,
+  root_dir = require("lspconfig").util.root_pattern "deno.json",
+  on_attach = function()
+    local active_clients = vim.lsp.get_clients()
 
-      for _, client in pairs(active_clients) do
-        if client.name == "ts_ls" then
-          client.stop()
-        end
+    for _, client in pairs(active_clients) do
+      if client.name == "ts_ls" then
+        client.stop()
       end
-    end,
-  },
+    end
+  end,
 }
 
 require("lspconfig").dockerls.setup {
@@ -176,7 +174,7 @@ require("lspconfig").yamlls.setup {
     }
 
     if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
-      vim.diagnostic.disable()
+      vim.diagnostic.enable(false)
     end
   end,
 }
@@ -205,7 +203,7 @@ require("lspconfig").pyright.setup {
         autoImportCompletions = true,
         autoSearchPaths = true,
         diagnosticMode = "workspace", -- openFilesOnly, workspace
-        typeCheckingMode = "basic",   -- off, basic, strict
+        typeCheckingMode = "basic", -- off, basic, strict
         useLibraryCodeForTypes = true,
       },
     },
