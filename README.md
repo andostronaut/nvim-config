@@ -23,22 +23,12 @@ ln -s . ~/.config/nvim
 Install Deps with Homebrew:
 
 ```sh
-brew install --cask iterm2
-
 brew install node vim neovim tree-sitter git fd ripgrep lazygit lua luajit
 ```
 
-For XCode Command Line Tools do:
+### Install Mason Plugins
 
-```bash
-xcode-select --install
-```
-
-If you have already installed vim, create a symbolic link to map directly neovim with vim
-
-```sh
-ln -s $(which nvim) /opt/homebrew/bin/vim
-```
+Install Mason binaries on running this command `Mason` and tools with this command `MasonToolsInstall`
 
 ### Setup Go on Neovim
 
