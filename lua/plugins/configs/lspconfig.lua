@@ -141,6 +141,12 @@ require("lspconfig").ts_ls.setup {
   single_file_support = false,
 }
 
+require("lspconfig").eslint.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  root_dir = require("lspconfig").util.root_pattern "package.json",
+}
+
 require("lspconfig").dockerls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
