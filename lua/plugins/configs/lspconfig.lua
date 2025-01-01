@@ -131,6 +131,10 @@ require("lspconfig").astro.setup {
 require("lspconfig").denols.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
+  init_options = {
+    lint = true,
+    unstable = true,
+  },
   root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
 }
 
