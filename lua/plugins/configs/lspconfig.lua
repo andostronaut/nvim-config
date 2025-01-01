@@ -128,23 +128,17 @@ require("lspconfig").astro.setup {
   capabilities = M.capabilities,
 }
 
+require("lspconfig").denols.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
+}
+
 require("lspconfig").ts_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
-}
-
-require("lspconfig").denols.setup {
-  capabilities = M.capabilities,
-  root_dir = require("lspconfig").util.root_pattern "deno.json",
-  on_attach = function()
-    local active_clients = vim.lsp.get_clients()
-
-    for _, client in pairs(active_clients) do
-      if client.name == "ts_ls" then
-        client.stop()
-      end
-    end
-  end,
+  root_dir = require("lspconfig").util.root_pattern "package.json",
+  single_file_support = false,
 }
 
 require("lspconfig").dockerls.setup {
