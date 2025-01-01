@@ -26,7 +26,19 @@ Install Deps with Homebrew:
 brew install node vim neovim tree-sitter git fd ripgrep lazygit lua luajit
 ```
 
-### Install Mason Plugins
+### Use Lazy vim
+
+```
+:Lazy
+```
+
+and to sync
+
+```
+:Lazy sync
+```
+
+### Install Mason LSP and Plugins
 
 [Mason](https://github.com/williamboman/mason.nvim) is a package manager for Neovim that helps manage LSP servers, DAP servers, linters, and formatters.
 
