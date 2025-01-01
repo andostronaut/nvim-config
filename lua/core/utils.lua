@@ -115,30 +115,4 @@ M.lazy_load = function(plugin)
   })
 end
 
-M.has_deno_json = function()
-  local stat, err = vim.loop.fs_stat "deno.json"
-  return stat and stat.type == "file"
-end
-
-M.get_ts_js_linter = function()
-  return M.has_deno_json() and "denols" or "eslint"
-end
-
-M.is_helm_file = function(path)
-  local check = vim.fs.find("Chart.yaml", { path = vim.fs.dirname(path), upward = true })
-  return not vim.tbl_isempty(check)
-end
-
-M.yaml_filetype = function(path, bufname)
-  return M.is_helm_file(path) and "helm" or "yaml"
-end
-
-M.tmpl_filetype = function(path, bufname)
-  return M.is_helm_file(path) and "templ" or "template"
-end
-
-M.tpl_filetype = function(path, bufname)
-  return M.is_helm_file(path) and "templ" or "smarty"
-end
-
 return M

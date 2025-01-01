@@ -152,25 +152,8 @@ require("lspconfig").helm_ls.setup {
 }
 
 require("lspconfig").yamlls.setup {
+  on_attach = M.on_attach,
   capabilities = M.capabilities,
-  on_attach = function(client, bufnr)
-    vim.filetype.add {
-      extension = {
-        yaml = utils.yaml_filetype,
-        yml = utils.yaml_filetype,
-        tmpl = utils.tmpl_filetype,
-        tpl = utils.tpl_filetype,
-      },
-      filename = {
-        ["Chart.yaml"] = "yaml",
-        ["Chart.lock"] = "yaml",
-      },
-    }
-
-    if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
-      vim.diagnostic.enable(false)
-    end
-  end,
 }
 
 require("lspconfig").templ.setup {

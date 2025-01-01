@@ -107,8 +107,8 @@ M.setup_linting = function()
   local lint = require "lint"
 
   lint.linters_by_ft = {
-    javascript = { utils.get_ts_js_linter() },
-    typescript = { utils.get_ts_js_linter() },
+    javascript = { "eslint" },
+    typescript = { "eslint" },
     javascriptreact = { "eslint" },
     typescriptreact = { "eslint" },
     svelte = { "eslint" },
