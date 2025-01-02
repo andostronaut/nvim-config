@@ -68,10 +68,10 @@ M.setup_formatting = function()
 
   conform.setup {
     formatters_by_ft = {
-      javascript = { "prettier" },
-      typescript = { "prettier" },
-      javascriptreact = { "prettier" },
-      typescriptreact = { "prettier" },
+      javascript = { utils.load_js_ts_formatter() },
+      typescript = { utils.load_js_ts_formatter() },
+      javascriptreact = { utils.load_js_ts_formatter() },
+      typescriptreact = { utils.load_js_ts_formatter() },
       svelte = { "prettier" },
       vue = { "prettier" },
       css = { "prettier" },
@@ -107,10 +107,10 @@ M.setup_linting = function()
   local lint = require "lint"
 
   lint.linters_by_ft = {
-    javascript = { "eslint" },
-    typescript = { "eslint" },
-    javascriptreact = { "eslint" },
-    typescriptreact = { "eslint" },
+    javascript = { utils.load_js_ts_linter() },
+    typescript = { utils.load_js_ts_linter() },
+    javascriptreact = { utils.load_js_ts_linter() },
+    typescriptreact = { utils.load_js_ts_linter() },
     svelte = { "eslint" },
     vue = { "eslint" },
     python = { "pylama" },
