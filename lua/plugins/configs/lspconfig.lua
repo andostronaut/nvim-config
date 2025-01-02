@@ -129,20 +129,54 @@ require("lspconfig").astro.setup {
 }
 
 require("lspconfig").denols.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-  init_options = {
-    lint = true,
-    formatting = true,
-    unstable = true,
-  },
   root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "markdown",
+  },
+  init_options = {
+    config = "./deno.json",
+    unstable = true,
+    suggest = {
+      imports = {
+        hosts = {
+          ["https://deno.land"] = true,
+          ["https://cdn.nest.land"] = true,
+          ["https://crux.land"] = true,
+        },
+      },
+    },
+  },
+
+  on_attach = M.on_attach,
 }
 
 require("lspconfig").ts_ls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-  root_dir = require("lspconfig").util.root_pattern "package.json",
+  on_attach = function(client, bufnr)
+    M.on_attach(client, bufnr)
+    vim.keymap.set("n", "<leader>ro", function()
+      vim.lsp.buf.execute_command {
+        command = "_typescript.organizeImports",
+        arguments = { vim.fn.expand "%:p" },
+      }
+    end, { buffer = bufnr, remap = false })
+  end,
+  root_dir = function(filename, bufnr)
+    local denoRootDir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc")(filename)
+    if denoRootDir then
+      -- print('this seems to be a deno project; returning nil so that tsserver does not attach');
+      return nil
+      -- else
+      -- print('this seems to be a ts project; return root dir based on package.json')
+    end
+
+    return require("lspconfig").util.root_pattern "package.json"(filename)
+  end,
   single_file_support = false,
 }
 
