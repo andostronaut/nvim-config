@@ -133,6 +133,7 @@ require("lspconfig").denols.setup {
   capabilities = M.capabilities,
   init_options = {
     lint = true,
+    formatting = true,
     unstable = true,
   },
   root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
