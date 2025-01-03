@@ -3,9 +3,10 @@ require "nvchad.lsp"
 
 local M = {}
 local utils = require "core.utils"
+local vue_language_server_path = require("mason-registry").get_package("vue-language-server"):get_install_path()
+  .. "/node_modules/@vue/language-server"
 
 -- export on_attach & capabilities for custom lspconfigs
-
 M.on_attach = function(client, bufnr)
   client.server_capabilities.documentFormattingProvider = false
   client.server_capabilities.documentRangeFormattingProvider = false
@@ -64,16 +65,6 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
-require("lspconfig").html.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
-require("lspconfig").cssls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
 require("lspconfig").tailwindcss.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
@@ -101,11 +92,6 @@ require("lspconfig").svelte.setup {
   end,
 }
 
-require("lspconfig").prismals.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
 require("lspconfig").graphql.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
@@ -116,16 +102,6 @@ require("lspconfig").emmet_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-}
-
-require("lspconfig").angularls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
-require("lspconfig").astro.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
 }
 
 require("lspconfig").denols.setup {
@@ -177,6 +153,17 @@ require("lspconfig").ts_ls.setup {
 
     return require("lspconfig").util.root_pattern "package.json"(filename)
   end,
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = vue_language_server_path,
+        languages = { "vue" },
+      },
+    },
+  },
+
+  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
   single_file_support = false,
 }
 
@@ -184,31 +171,17 @@ require("lspconfig").eslint.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
   root_dir = require("lspconfig").util.root_pattern "package.json",
-}
-
-require("lspconfig").dockerls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
-require("lspconfig").helm_ls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
-require("lspconfig").yamlls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
-require("lspconfig").templ.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
-require("lspconfig").jsonls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "vue",
+    "svelte",
+    "astro",
+  },
 }
 
 require("lspconfig").pyright.setup {
@@ -295,6 +268,56 @@ require("lspconfig").intelephense.setup {
 }
 
 require("lspconfig").dartls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").html.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").cssls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").angularls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").astro.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").dockerls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").helm_ls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").yamlls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").templ.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").jsonls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").prismals.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 }
