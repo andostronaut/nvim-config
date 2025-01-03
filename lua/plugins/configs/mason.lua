@@ -62,7 +62,7 @@ local options = {
       "stylua",
       "isort",
       "black",
-      "pylama",
+      "flake8",
       "eslint",
       "rustfmt",
       "rubyfmt",
