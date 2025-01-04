@@ -1,3 +1,11 @@
+<p align="center">
+  <img 
+    src="demo.png"
+    alt="Demo"
+    style="width:100%;"
+  />
+</p>
+
 # NVIM Config
 
 This repository contains personalized configurations for nvim using Lua and NvChad ⚙️🪴
