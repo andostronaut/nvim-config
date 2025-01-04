@@ -26,6 +26,17 @@ Install Deps with Homebrew:
 brew install node vim neovim tree-sitter git fd ripgrep lazygit lua luajit
 ```
 
+### Install the config
+
+Make sure to remove or move your current nvim directory
+
+```sh
+git clone https://github.com/andostronaut/nvim-config.git ~/.config/nvim
+
+```
+
+Run nvim and wait for the plugins to be installed
+
 ### Use Lazy vim
 
 ```
@@ -36,6 +47,14 @@ and to sync
 
 ```
 :Lazy sync
+```
+
+### Get healthy
+
+Open nvim and enter the following:
+
+```
+:checkhealth
 ```
 
 ### Install Mason LSP and Plugins
