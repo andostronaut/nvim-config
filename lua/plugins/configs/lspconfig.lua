@@ -292,11 +292,6 @@ require("lspconfig").dockerls.setup {
   capabilities = M.capabilities,
 }
 
-require("lspconfig").helm_ls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
 require("lspconfig").yamlls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,

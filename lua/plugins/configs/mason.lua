@@ -37,7 +37,6 @@ local options = {
       "angularls",
       "astro",
       "dockerls",
-      "helm_ls",
       "jsonls",
       "pyright",
       "rust_analyzer",
