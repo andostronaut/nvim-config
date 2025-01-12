@@ -297,11 +297,6 @@ require("lspconfig").yamlls.setup {
   capabilities = M.capabilities,
 }
 
-require("lspconfig").templ.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
 require("lspconfig").jsonls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,

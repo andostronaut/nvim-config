@@ -46,7 +46,6 @@ local options = {
       "sqlls",
       "gopls",
       "yamlls",
-      "templ",
       "intelephense",
       "solargraph",
       "denols",

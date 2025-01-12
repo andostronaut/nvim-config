@@ -44,11 +44,9 @@ local options = {
       "twig",
       "vue",
       "xml",
-      "templ",
       "requirements",
       "hcl",
       "regex",
-      "templ",
     },
 
     highlight = {
