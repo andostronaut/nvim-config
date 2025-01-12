@@ -267,11 +267,6 @@ require("lspconfig").intelephense.setup {
   capabilities = M.capabilities,
 }
 
-require("lspconfig").dartls.setup {
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-}
-
 require("lspconfig").html.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
