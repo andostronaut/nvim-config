@@ -32,7 +32,6 @@ local options = {
       "svelte",
       "astro",
       "cmake",
-      "dart",
       "jsdoc",
       "nix",
       "pug",
