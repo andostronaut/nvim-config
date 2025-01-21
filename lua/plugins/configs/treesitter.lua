@@ -45,6 +45,7 @@ local options = {
       "requirements",
       "hcl",
       "regex",
+      "zig",
     },
 
     highlight = {
