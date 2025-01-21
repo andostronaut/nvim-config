@@ -48,6 +48,7 @@ local options = {
       "yamlls",
       "jsonls",
       "prismals",
+      "zls",
     },
     -- auto-install configured servers (with lspconfig)
     automatic_installation = true, -- not the same as ensure_installed
@@ -73,6 +74,7 @@ local options = {
       "gofumpt",
       "goimports",
       "php-cs-fixer",
+      "zigfmt",
     },
     integrations = {
       ["mason-lspconfig"] = true,

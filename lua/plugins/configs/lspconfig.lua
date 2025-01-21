@@ -307,4 +307,9 @@ require("lspconfig").prismals.setup {
   capabilities = M.capabilities,
 }
 
+require("lspconfig").zls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
 return M
