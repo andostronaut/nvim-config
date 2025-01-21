@@ -10,14 +10,6 @@
 
 This repository contains personalized configurations for nvim using Lua and NvChad ⚙️🪴
 
-## Configure NVIM Config
-
-Go to the repo directory and use symlink for nvim config
-
-```sh
-ln -s . ~/.config/nvim
-```
-
 ## Setup Neovim
 
 ### Setup Requires
