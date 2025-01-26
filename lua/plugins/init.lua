@@ -435,8 +435,15 @@ local default_plugins = {
       require("core.utils").lazy_load "noice.nvim"
     end,
     dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
+      {
+        "MunifTanjim/nui.nvim",
+      },
+      {
+        "rcarriga/nvim-notify",
+        opts = {
+          top_down = false,
+        },
+      },
     },
     opts = {
       lsp = {
