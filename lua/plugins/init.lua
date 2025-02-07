@@ -435,8 +435,15 @@ local default_plugins = {
       require("core.utils").lazy_load "noice.nvim"
     end,
     dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
+      {
+        "MunifTanjim/nui.nvim",
+      },
+      {
+        "rcarriga/nvim-notify",
+        opts = {
+          top_down = false,
+        },
+      },
     },
     opts = {
       lsp = {
@@ -462,7 +469,7 @@ local default_plugins = {
   },
 
   -- copilot
-  {
+  --[[ {
     "github/copilot.vim",
     lazy = false,
     config = function() -- Mapping tab is already used by NvChad
@@ -471,6 +478,21 @@ local default_plugins = {
       vim.g.copilot_tab_fallback = ""
       -- The mapping is set to other key, see custom/lua/mappings
       -- or run <leader>ch to see copilot mapping section
+    end,
+  },]]
+
+  -- supermaven
+  {
+    "supermaven-inc/supermaven-nvim",
+    lazy = false,
+    config = function()
+      require("supermaven-nvim").setup {
+        keymaps = {
+          accept_suggestion = "<leader-a>",
+          clear_suggestion = "<leader-c>",
+          accept_word = "<leader-a>",
+        },
+      }
     end,
   },
 
