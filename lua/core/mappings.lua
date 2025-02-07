@@ -465,7 +465,7 @@ M.gitsigns = {
   },
 }
 
-M.copilot = {
+--[[M.copilot = {
   i = {
     ["<leader>a"] = {
       function()
@@ -475,6 +475,6 @@ M.copilot = {
       { replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true },
     },
   },
-}
+}]]
 
 return M
