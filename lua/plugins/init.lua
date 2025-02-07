@@ -488,9 +488,9 @@ local default_plugins = {
     config = function()
       require("supermaven-nvim").setup {
         keymaps = {
-          accept_suggestion = "<leader-a>",
-          clear_suggestion = "<leader-c>",
-          accept_word = "<leader-a>",
+          accept_suggestion = "<leader>aa",
+          clear_suggestion = "<leader>c",
+          accept_word = "<leader>a",
         },
       }
     end,
