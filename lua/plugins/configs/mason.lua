@@ -49,6 +49,7 @@ local options = {
       "jsonls",
       "prismals",
       "zls",
+      "mdx_analyzer",
     },
     -- auto-install configured servers (with lspconfig)
     automatic_installation = true, -- not the same as ensure_installed
@@ -63,6 +64,7 @@ local options = {
       "phpstan",
       "tflint",
       "jsonlint",
+      "markdownlint",
 
       -- Formatters --
       "prettier",
@@ -75,6 +77,7 @@ local options = {
       "goimports",
       "php-cs-fixer",
       "zigfmt",
+      "markdownfmt",
     },
     integrations = {
       ["mason-lspconfig"] = true,
