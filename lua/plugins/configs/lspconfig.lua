@@ -312,4 +312,9 @@ require("lspconfig").zls.setup {
   capabilities = M.capabilities,
 }
 
+require("lspconfig").mdx_analyzer.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
 return M
