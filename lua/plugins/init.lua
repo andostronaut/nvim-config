@@ -520,21 +520,6 @@ local default_plugins = {
     end,
   },
 
-  -- supermaven
-  --[[ {
-    "supermaven-inc/supermaven-nvim",
-    lazy = false,
-    config = function()
-      require("supermaven-nvim").setup {
-        keymaps = {
-          accept_suggestion = "<leader>aa",
-          clear_suggestion = "<leader>c",
-          accept_word = "<leader>a",
-        },
-      }
-    end,
-  },]]
-
   -- LazyGit
   {
     "kdheepak/lazygit.nvim",
