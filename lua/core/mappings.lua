@@ -465,7 +465,7 @@ M.gitsigns = {
   },
 }
 
---[[M.copilot = {
+M.copilot = {
   i = {
     ["<leader>a"] = {
       function()
@@ -474,7 +474,14 @@ M.gitsigns = {
       "Copilot Accept",
       { replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true },
     },
+    ["<leader>c"] = {
+      function()
+        vim.fn.feedkeys(vim.fn["copilot#Cancel"](), "")
+      end,
+      "Copilot Cancel",
+      { replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true },
+    },
   },
-}]]
+}
 
 return M
