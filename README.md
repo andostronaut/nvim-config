@@ -6,8 +6,6 @@
   />
 </p>
 
-# NVIM Config
-
 This repository contains personalized configurations for nvim using Lua and NvChad ⚙️🪴
 
 ## Setup Neovim
