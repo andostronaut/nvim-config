@@ -474,13 +474,6 @@ M.copilot = {
       "Copilot Accept",
       { replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true },
     },
-    ["<leader>c"] = {
-      function()
-        vim.fn.feedkeys(vim.fn["copilot#Cancel"](), "")
-      end,
-      "Copilot Cancel",
-      { replace_keycodes = true, nowait = true, silent = true, expr = true, noremap = true },
-    },
   },
 }
 
