@@ -468,7 +468,7 @@ local default_plugins = {
     end,
   },
 
-  -- troube
+  -- trouble
   {
     "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -538,6 +538,13 @@ local default_plugins = {
     config = function()
       require("telescope").load_extension "lazygit"
     end,
+  },
+
+  -- tiny-glimmer
+  {
+    "rachartier/tiny-glimmer.nvim",
+    event = "VeryLazy",
+    opts = {},
   },
 }
 
