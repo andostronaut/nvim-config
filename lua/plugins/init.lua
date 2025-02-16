@@ -507,6 +507,20 @@ local default_plugins = {
     },
   },
 
+  -- supermaven
+  {
+    "supermaven-inc/supermaven-nvim",
+    lazy = false,
+    config = function()
+      require("supermaven-nvim").setup {
+        keymaps = {
+          accept_suggestion = "<leader>sa",
+          clear_suggestion = "<leader>sc",
+        },
+      }
+    end,
+  },
+
   -- copilot
   {
     "github/copilot.vim",
@@ -515,8 +529,12 @@ local default_plugins = {
       vim.g.copilot_no_tab_map = true
       vim.g.copilot_assume_mapped = true
       vim.g.copilot_tab_fallback = ""
-      -- The mapping is set to other key, see custom/lua/mappings
-      -- or run <leader>ch to see copilot mapping section
+      vim.api.nvim_set_keymap("i", "<leader>ca", 'copilot#Accept("<CR>")', { expr = true, silent = true })
+      vim.api.nvim_set_keymap("i", "<leader>cc", "copilot#Dismiss()", { expr = true, silent = true })
+      vim.g.copilot_filetypes = {
+        ["*"] = true,
+        ["mdx"] = true,
+      }
     end,
   },
 
