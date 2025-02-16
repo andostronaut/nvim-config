@@ -167,20 +167,23 @@ require("lspconfig").ts_ls.setup {
   single_file_support = false,
 }
 
-require("lspconfig").eslint.setup {
+require("lspconfig").biome.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
-  root_dir = require("lspconfig").util.root_pattern "package.json",
+  root_dir = require("lspconfig").util.root_pattern "biome.json",
   filetypes = {
+    "astro",
+    "css",
+    "graphql",
     "javascript",
     "javascriptreact",
-    "javascript.jsx",
-    "typescript",
-    "typescriptreact",
-    "typescript.tsx",
-    "vue",
+    "json",
+    "jsonc",
     "svelte",
-    "astro",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact",
+    "vue",
   },
 }
 

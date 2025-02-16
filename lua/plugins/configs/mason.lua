@@ -31,7 +31,7 @@ local options = {
       "emmet_ls",
       "denols",
       "ts_ls",
-      "eslint",
+      "biome",
       "pyright",
       "solargraph",
       "rust_analyzer",
@@ -58,7 +58,7 @@ local options = {
   tool = {
     ensure_installed = {
       -- Linters --
-      "eslint",
+      "biome",
       "flake8",
       "phpcs",
       "phpstan",
@@ -67,7 +67,6 @@ local options = {
       "markdownlint",
 
       -- Formatters --
-      "prettier",
       "stylua",
       "black",
       "isort",
@@ -76,8 +75,6 @@ local options = {
       "gofumpt",
       "goimports",
       "php-cs-fixer",
-      "zigfmt",
-      "markdownfmt",
     },
     integrations = {
       ["mason-lspconfig"] = true,

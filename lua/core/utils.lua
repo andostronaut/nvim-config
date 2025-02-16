@@ -115,16 +115,16 @@ M.lazy_load = function(plugin)
   })
 end
 
-M.load_js_ts_linter = function()
-  local stat, err = vim.loop.fs_stat "deno.json"
-  local has_deno_json = stat and stat.type == "file"
-  return has_deno_json and "deno" or "eslint"
-end
-
 M.load_js_ts_formatter = function()
   local stat, err = vim.loop.fs_stat "deno.json"
   local has_deno_json = stat and stat.type == "file"
-  return has_deno_json and "deno_fmt" or "prettier"
+  return has_deno_json and "deno_fmt" or "biome"
+end
+
+M.load_js_ts_linter = function()
+  local stat, err = vim.loop.fs_stat "deno.json"
+  local has_deno_json = stat and stat.type == "file"
+  return has_deno_json and "deno" or "biomejs"
 end
 
 return M
