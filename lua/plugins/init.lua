@@ -564,6 +564,15 @@ local default_plugins = {
     event = "VeryLazy",
     opts = {},
   },
+
+  -- lsp-lines
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    lazy = false,
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  },
 }
 
 local config = require("core.utils").load_config()
