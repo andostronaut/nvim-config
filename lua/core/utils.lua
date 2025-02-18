@@ -115,16 +115,61 @@ M.lazy_load = function(plugin)
   })
 end
 
-M.load_js_ts_formatter = function()
+M.load_formatter = function()
+  -- Check for deno.json
   local stat, err = vim.loop.fs_stat "deno.json"
   local has_deno_json = stat and stat.type == "file"
-  return has_deno_json and "deno_fmt" or "biome"
+  if has_deno_json then
+    return "deno_fmt"
+  end
+
+  -- Check for various Prettier config files
+  local prettier_files = {
+    ".prettierrc",
+    ".prettierrc.json",
+    ".prettierrc.js",
+    ".prettierrc.yml",
+    ".prettierrc.yaml",
+    "prettier.config.js",
+    "prettier.config.cjs",
+  }
+  for _, file in ipairs(prettier_files) do
+    stat, err = vim.loop.fs_stat(file)
+    if stat and stat.type == "file" then
+      return "prettier"
+    end
+  end
+
+  return "biome"
 end
 
-M.load_js_ts_linter = function()
+M.load_linter = function()
+  -- Check for deno.json
   local stat, err = vim.loop.fs_stat "deno.json"
   local has_deno_json = stat and stat.type == "file"
-  return has_deno_json and "deno" or "biomejs"
+  if has_deno_json then
+    return "deno"
+  end
+
+  -- Check for various ESLint config files
+  local eslint_files = {
+    ".eslintrc.json",
+    ".eslintrc.js",
+    ".eslintrc.yml",
+    ".eslintrc.yaml",
+    ".eslintrc",
+    "eslint.config.js",
+    "eslint.config.mjs",
+    "eslint.config.cjs",
+  }
+  for _, file in ipairs(eslint_files) do
+    stat, err = vim.loop.fs_stat(file)
+    if stat and stat.type == "file" then
+      return "eslint"
+    end
+  end
+
+  return "biomejs"
 end
 
 return M
