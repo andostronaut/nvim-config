@@ -187,6 +187,38 @@ require("lspconfig").biome.setup {
   },
 }
 
+require("lspconfig").eslint.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  root_dir = function(filename)
+    return require("lspconfig").util.root_pattern(
+      "package.json",
+      ".eslintrc.json",
+      ".eslintrc.js",
+      ".eslintrc.yml",
+      ".eslintrc.yaml",
+      ".eslintrc",
+      "eslint.config.js",
+      "eslint.config.mjs",
+      "eslint.config.cjs"
+    )(filename)
+  end,
+  filetypes = {
+    "astro",
+    "css",
+    "graphql",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "svelte",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact",
+    "vue",
+  },
+}
+
 require("lspconfig").pyright.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
