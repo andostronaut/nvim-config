@@ -65,6 +65,7 @@ local options = {
       "phpcs",
       "phpstan",
       "tflint",
+      "markdownlint",
       "eslint",
       "luacheck",
 
