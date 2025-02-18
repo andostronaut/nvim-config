@@ -204,15 +204,18 @@ require("lspconfig").eslint.setup {
     )(filename)
   end,
   filetypes = {
+    "astro",
+    "css",
+    "graphql",
     "javascript",
     "javascriptreact",
-    "javascript.jsx",
-    "typescript",
-    "typescriptreact",
-    "typescript.tsx",
-    "vue",
+    "json",
+    "jsonc",
     "svelte",
-    "astro",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact",
+    "vue",
   },
 }
 
