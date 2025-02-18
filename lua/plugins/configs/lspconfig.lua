@@ -352,4 +352,9 @@ require("lspconfig").mdx_analyzer.setup {
   capabilities = M.capabilities,
 }
 
+require("lspconfig").marksman.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
 return M
