@@ -51,6 +51,7 @@ local options = {
       "zls",
       "mdx_analyzer",
       "eslint",
+      "marksman",
     },
     -- auto-install configured servers (with lspconfig)
     automatic_installation = true, -- not the same as ensure_installed
@@ -64,7 +65,6 @@ local options = {
       "phpcs",
       "phpstan",
       "tflint",
-      "markdownlint",
       "eslint",
       "luacheck",
 
