@@ -140,7 +140,13 @@ M.load_formatter = function()
     end
   end
 
-  return "biome"
+  -- Check for biome.json
+  stat, err = vim.loop.fs_stat "biome.json"
+  if stat and stat.type == "file" then
+    return "biome"
+  end
+
+  return nil
 end
 
 M.load_linter = function()
@@ -169,7 +175,13 @@ M.load_linter = function()
     end
   end
 
-  return "biomejs"
+  -- Check for biome.json
+  stat, err = vim.loop.fs_stat "biome.json"
+  if stat and stat.type == "file" then
+    return "biomejs"
+  end
+
+  return nil
 end
 
 return M
