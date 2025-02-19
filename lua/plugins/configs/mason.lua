@@ -68,6 +68,7 @@ local options = {
       "markdownlint",
       "eslint",
       "luacheck",
+      "jsonlint",
 
       -- Formatters --
       "stylua",
