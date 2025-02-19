@@ -192,7 +192,6 @@ require("lspconfig").eslint.setup {
   capabilities = M.capabilities,
   root_dir = function(filename)
     return require("lspconfig").util.root_pattern(
-      "package.json",
       ".eslintrc.json",
       ".eslintrc.js",
       ".eslintrc.yml",
@@ -209,8 +208,6 @@ require("lspconfig").eslint.setup {
     "graphql",
     "javascript",
     "javascriptreact",
-    "json",
-    "jsonc",
     "svelte",
     "typescript",
     "typescript.tsx",
