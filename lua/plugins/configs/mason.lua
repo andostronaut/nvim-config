@@ -60,7 +60,6 @@ local options = {
   tool = {
     ensure_installed = {
       -- Linters --
-      "biome",
       "flake8",
       "phpcs",
       "phpstan",
@@ -80,6 +79,9 @@ local options = {
       "goimports",
       "php-cs-fixer",
       "prettier",
+
+      -- both linters and formatters --
+      "biome",
     },
     integrations = {
       ["mason-lspconfig"] = true,

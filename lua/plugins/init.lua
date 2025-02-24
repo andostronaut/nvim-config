@@ -573,6 +573,14 @@ local default_plugins = {
       require("lsp_lines").setup()
     end,
   },
+
+  -- beacon
+  {
+    "danilamihailov/beacon.nvim",
+    config = function()
+      require("beacon").setup()
+    end,
+  },
 }
 
 local config = require("core.utils").load_config()
